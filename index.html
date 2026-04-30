@@ -374,15 +374,28 @@
     }
 
     /* ── ABOUT ── */
+    #about .section-label,
+    #about .section-heading {
+      text-align: center;
+    }
+
+    #about .section-heading {
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
     #about {
       background: var(--cream-light);
     }
     .about-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 4rem;
       align-items: start;
       margin-top: 3rem;
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .about-intro {
@@ -473,6 +486,17 @@
       line-height: 1.7;
       color: #6a7080;
     }
+    /* Align About columns visually */
+    .about-intro,
+    .about-values,
+    .team-cards {
+      max-width: 520px;
+      width: 100%;
+    }
+
+.team-cards {
+  justify-self: end;
+}
 
     /* ── CONTACT ── */
     #contact {
