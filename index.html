@@ -136,8 +136,10 @@
       margin: 0 auto;
       padding: 0 5vw;
       padding-top: 7rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
       gap: 4rem;
       align-items: center;
       width: 100%;
@@ -244,6 +246,21 @@
       height: auto;
       display: block;
     }
+
+    .hero-visual {
+  width: 100%;
+  max-width: 1100px;
+  margin-bottom: 2rem;
+}
+
+.hero-text {
+  max-width: 900px;
+  width: 100%;
+}
+
+.hero-eyebrow {
+  text-align: center;
+}
 
     /* Decorative accent */
     .hero-accent-line {
@@ -635,12 +652,12 @@
   <div class="hero-bg"></div>
   <div class="hero-inner">
     <div class="hero-text fade-up">
-      <span class="hero-eyebrow">Cloud · Infrastructure · Operations</span>
+      <span class="hero-eyebrow">Operations · Infrastructure · Cloud </span>
       <h1 class="hero-heading">
         Business execution supported by systems that actually work<br>
       </h1>
       <p class="hero-subtext">
-        We help small and mid-sized businesses bridge the gap between their current IT reality and the future they're building toward — practical expertise, no fluff.
+        We exist to deliver practical, actionable solutions that improve how businesses run, not just how they look on paper.
       </p>
       <div class="hero-actions">
         <a href="#contact" class="btn-primary">Start a Conversation</a>
@@ -654,16 +671,16 @@
 
       <div class="hero-stats">
         <div class="stat">
-          <div class="stat-number">Azure</div>
-          <div class="stat-label">Cloud & Infrastructure</div>
+          <div class="stat-number">Operations</div>
+          <div class="stat-label">Process | Accountability | Performance</div>
         </div>
         <div class="stat">
-          <div class="stat-number">LEAN</div>
-          <div class="stat-label">Operations & Analytics</div>
+          <div class="stat-number">Systems</div>
+          <div class="stat-label">Infrastructure | Cloud | Reliability</div>
         </div>
         <div class="stat">
-          <div class="stat-number">FL</div>
-          <div class="stat-label">Based in Sarasota</div>
+          <div class="stat-number">Execution</div>
+          <div class="stat-label">Implementation | Follow-through | Results</div>
         </div>
       </div>
     </div>
