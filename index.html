@@ -397,6 +397,18 @@
       margin-left: auto;
       margin-right: auto;
     }
+    .about-grid > div:first-child,
+    .about-grid > div:last-child {
+      width: 100%;
+      max-width: 520px;
+    }
+    
+    .about-grid > div:first-child {
+      justify-self: start;
+    }
+    .about-grid > div:last-child {
+      justify-self: end;
+    }
 
     .about-intro {
       font-size: 1.05rem;
@@ -486,17 +498,6 @@
       line-height: 1.7;
       color: #6a7080;
     }
-    /* Align About columns visually */
-    .about-intro,
-    .about-values,
-    .team-cards {
-      max-width: 520px;
-      width: 100%;
-    }
-
-.team-cards {
-  justify-self: end;
-}
 
     /* ── CONTACT ── */
     #contact {
