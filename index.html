@@ -1,722 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kalea Consulting</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --navy:   #2a3d53;
-      --mauve:  #bc948d;
-      --cream:  #feebc7;
-      --white:  #ffffff;
-      --cream-light: #fdf6ec;
-      --navy-light: #3a5068;
-      --text-body: #4a4a4a;
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Jost', sans-serif;
-      color: var(--text-body);
-      background: var(--white);
-      overflow-x: hidden;
-    }
-
-    /* ── NAV ── */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1.1rem 5vw;
-      background: rgba(255,255,255,0.92);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(42,61,83,0.08);
-      transition: box-shadow 0.3s;
-    }
-    nav.scrolled { box-shadow: 0 2px 20px rgba(42,61,83,0.10); }
-
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 0.65rem;
-      text-decoration: none;
-    }
-    .nav-logo img {
-      height: 36px;
-      width: auto;
-    }
-    .nav-logo-text {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.35rem;
-      font-weight: 600;
-      color: var(--navy);
-      letter-spacing: 0.01em;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2.2rem;
-      list-style: none;
-    }
-    .nav-links a {
-      font-size: 0.82rem;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--navy);
-      text-decoration: none;
-      position: relative;
-      padding-bottom: 2px;
-      transition: color 0.2s;
-    }
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0;
-      width: 0; height: 1.5px;
-      background: var(--mauve);
-      transition: width 0.25s ease;
-    }
-    .nav-links a:hover { color: var(--mauve); }
-    .nav-links a:hover::after { width: 100%; }
-
-    .nav-cta {
-      background: var(--navy);
-      color: var(--white) !important;
-      padding: 0.5rem 1.3rem;
-      border-radius: 2px;
-      letter-spacing: 0.1em !important;
-      transition: background 0.2s !important;
-    }
-    .nav-cta:hover { background: var(--navy-light) !important; color: var(--white) !important; }
-    .nav-cta::after { display: none !important; }
-
-    /* ── HERO ── */
-    #home {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-      background: var(--cream-light);
-    }
-
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(ellipse 60% 70% at 0% 50%, rgba(42,61,83,0.07) 0%, transparent 70%),
-        radial-gradient(ellipse 50% 60% at 100% 80%, rgba(188,148,141,0.12) 0%, transparent 70%),
-        linear-gradient(160deg, #fdf6ec 0%, #feebc7 40%, #fdf6ec 100%);
-    }
-
-    /* Subtle grid texture */
-    .hero-bg::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(42,61,83,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(42,61,83,0.03) 1px, transparent 1px);
-      background-size: 48px 48px;
-    }
-
-    .hero-inner {
-      position: relative;
-      z-index: 2;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 5vw;
-      padding-top: 7rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      gap: 4rem;
-      align-items: center;
-      width: 100%;
-    }
-
-    .hero-text { }
-
-    .hero-eyebrow {
-      display: inline-block;
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--mauve);
-      margin-bottom: 1.2rem;
-      padding: 0.3rem 0.8rem;
-      border: 1px solid rgba(188,148,141,0.4);
-      border-radius: 2px;
-    }
-
-    .hero-heading {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.6rem, 5vw, 4rem);
-      font-weight: 300;
-      line-height: 1.15;
-      color: var(--navy);
-      margin-bottom: 1.5rem;
-    }
-    .hero-heading em {
-      font-style: italic;
-      color: var(--mauve);
-    }
-
-    .hero-subtext {
-      font-size: 1rem;
-      font-weight: 300;
-      line-height: 1.75;
-      color: #5a6272;
-      max-width: 850px;
-      margin: 0 auto 2.5rem auto;
-      text-align: center;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 1rem;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .btn-primary {
-      display: inline-block;
-      background: var(--navy);
-      color: var(--white);
-      text-decoration: none;
-      font-size: 0.8rem;
-      font-weight: 500;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      padding: 0.9rem 2rem;
-      border-radius: 2px;
-      transition: background 0.2s, transform 0.2s;
-    }
-    .btn-primary:hover { background: var(--navy-light); transform: translateY(-1px); }
-
-    .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      color: var(--navy);
-      text-decoration: none;
-      font-size: 0.8rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      transition: color 0.2s;
-    }
-    .btn-secondary:hover { color: var(--mauve); }
-    .btn-secondary svg { transition: transform 0.2s; }
-    .btn-secondary:hover svg { transform: translateX(3px); }
-
-    .hero-visual {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .hero-banner-wrap {
-      position: relative;
-      width: 100%;
-      border-radius: 4px;
-      overflow: hidden;
-      box-shadow:
-        0 30px 80px rgba(42,61,83,0.18),
-        0 8px 20px rgba(42,61,83,0.10);
-      transform: perspective(1000px) rotateY(-3deg) rotateX(1deg);
-      transition: transform 0.4s ease;
-    }
-    .hero-banner-wrap:hover {
-      transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
-    }
-    .hero-banner-wrap img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .hero-visual {
-  width: 100%;
-  max-width: 1100px;
-  margin-bottom: 2rem;
-}
-
-.hero-text {
-  max-width: 900px;
-  width: 100%;
-  text-align: center;
-  margin: 0 auto;
-}
-
-.hero-eyebrow {
-  text-align: center;
-}
-
-    /* Decorative accent */
-    .hero-accent-line {
-      position: absolute;
-      bottom: -2rem;
-      right: -1.5rem;
-      width: 120px;
-      height: 120px;
-      border: 1.5px solid rgba(188,148,141,0.4);
-      border-radius: 2px;
-      z-index: -1;
-    }
-
-    /* Stats row */
-    .hero-stats {
-      display: flex;
-      gap: 2rem;
-      margin-top: 3rem;
-      padding-top: 2rem;
-      border-top: 1px solid rgba(42,61,83,0.10);
-    }
-    .stat { }
-    .stat-number {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2rem;
-      font-weight: 600;
-      color: var(--navy);
-      line-height: 1;
-    }
-    .stat-label {
-      font-size: 0.72rem;
-      font-weight: 400;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: #8a8f9a;
-      margin-top: 0.3rem;
-    }
-
-    /* ── SERVICES STRIP ── */
-    .services-strip {
-      background: var(--navy);
-      padding: 3.5rem 5vw;
-    }
-    .services-strip-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-    }
-    .service-pill {
-      display: flex;
-      align-items: flex-start;
-      gap: 1rem;
-      padding: 1.5rem;
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 2px;
-      transition: border-color 0.2s, background 0.2s;
-    }
-    .service-pill:hover {
-      border-color: rgba(188,148,141,0.5);
-      background: rgba(255,255,255,0.04);
-    }
-    .service-icon {
-      width: 36px;
-      height: 36px;
-      flex-shrink: 0;
-      color: var(--mauve);
-    }
-    .service-pill-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: var(--white);
-      margin-bottom: 0.3rem;
-    }
-    .service-pill-desc {
-      font-size: 0.8rem;
-      font-weight: 300;
-      color: rgba(255,255,255,0.55);
-      line-height: 1.6;
-    }
-
-    /* ── SECTION SHARED ── */
-    section {
-      padding: 6rem 5vw;
-    }
-    .section-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    .section-label {
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--mauve);
-      margin-bottom: 0.8rem;
-    }
-    .section-heading {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 300;
-      color: var(--navy);
-      line-height: 1.2;
-      margin-bottom: 1.5rem;
-    }
-
-    /* ── ABOUT ── */
-    #about .section-label,
-    #about .section-heading {
-      text-align: center;
-    }
-
-    #about .section-heading {
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    #about {
-      background: var(--cream-light);
-    }
-    .about-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-      gap: 4rem;
-      align-items: start;
-      margin-top: 3rem;
-      max-width: 1100px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .about-grid > div:first-child,
-    .about-grid > div:last-child {
-      width: 100%;
-      max-width: 520px;
-    }
-    
-    .about-grid > div:first-child {
-      justify-self: start;
-    }
-    .about-grid > div:last-child {
-      justify-self: end;
-    }
-
-    .about-intro {
-      font-size: 1.05rem;
-      font-weight: 300;
-      line-height: 1.8;
-      color: #5a6272;
-      margin-bottom: 2rem;
-    }
-
-    .about-values {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.8rem;
-    }
-    .about-values li {
-      display: flex;
-      align-items: center;
-      gap: 0.7rem;
-      font-size: 0.88rem;
-      color: var(--navy);
-      font-weight: 400;
-    }
-    .about-values li::before {
-      content: '';
-      width: 20px;
-      height: 1.5px;
-      background: var(--mauve);
-      flex-shrink: 0;
-    }
-
-    .team-cards {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .team-card {
-      background: var(--white);
-      border-radius: 3px;
-      padding: 1.8rem;
-      border: 1px solid rgba(42,61,83,0.08);
-      display: flex;
-      gap: 1.2rem;
-      align-items: flex-start;
-      transition: box-shadow 0.2s, transform 0.2s;
-    }
-    .team-card:hover {
-      box-shadow: 0 8px 30px rgba(42,61,83,0.10);
-      transform: translateY(-2px);
-    }
-
-    .team-avatar {
-      width: 52px;
-      height: 52px;
-      border-radius: 50%;
-      background: var(--navy);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.4rem;
-      font-weight: 600;
-      color: var(--cream);
-      flex-shrink: 0;
-    }
-
-    .team-info {}
-    .team-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: var(--navy);
-      margin-bottom: 0.15rem;
-    }
-    .team-role {
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--mauve);
-      margin-bottom: 0.6rem;
-    }
-    .team-bio {
-      font-size: 0.84rem;
-      font-weight: 300;
-      line-height: 1.7;
-      color: #6a7080;
-    }
-
-    /* ── CONTACT ── */
-    #contact {
-      background: var(--white);
-    }
-
-    #contact .section-inner {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    #contact .section-label,
-    #contact .section-heading {
-      text-align: center;
-    }
-
-    #contact .section-heading {
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .contact-grid {
-      width: 100%;
-      display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 5rem;
-      align-items: start;
-      margin-top: 3rem;
-    }
-
-    .contact-intro {
-      font-size: 1rem;
-      font-weight: 300;
-      line-height: 1.8;
-      color: #5a6272;
-      margin-bottom: 2rem;
-    }
-
-    .contact-detail {
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-      margin-bottom: 1rem;
-    }
-    .contact-detail svg {
-      color: var(--mauve);
-      flex-shrink: 0;
-    }
-    .contact-detail a, .contact-detail span {
-      font-size: 0.9rem;
-      color: var(--navy);
-      text-decoration: none;
-      font-weight: 400;
-    }
-    .contact-detail a:hover { color: var(--mauve); }
-
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 1.1rem;
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-    }
-
-    .form-group label {
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--navy);
-    }
-
-    .form-group input,
-    .form-group textarea,
-    .form-group select {
-      background: var(--cream-light);
-      border: 1px solid rgba(42,61,83,0.14);
-      border-radius: 2px;
-      padding: 0.75rem 1rem;
-      font-family: 'Jost', sans-serif;
-      font-size: 0.88rem;
-      color: var(--navy);
-      outline: none;
-      transition: border-color 0.2s;
-      width: 100%;
-    }
-    .form-group input:focus,
-    .form-group textarea:focus,
-    .form-group select:focus {
-      border-color: var(--mauve);
-    }
-    .form-group textarea { resize: vertical; min-height: 120px; }
-
-    .form-submit {
-      display: inline-block;
-      background: var(--navy);
-      color: var(--white);
-      border: none;
-      cursor: pointer;
-      font-family: 'Jost', sans-serif;
-      font-size: 0.8rem;
-      font-weight: 500;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      padding: 0.9rem 2rem;
-      border-radius: 2px;
-      transition: background 0.2s, transform 0.2s;
-      align-self: flex-start;
-    }
-    .form-submit:hover { background: var(--navy-light); transform: translateY(-1px); }
-
-    /* ── FOOTER ── */
-    footer {
-      background: var(--navy);
-      padding: 2.5rem 5vw;
-    }
-    .footer-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .footer-logo {
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
-}
-
-.footer-logo img {
-  height: 36px;
-  width: auto;
-  object-fit: contain;
-  opacity: 0.95;
-}
-
-.footer-logo-text {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.35rem;
-  font-weight: 600;
-  color: rgba(255,255,255,0.9);
-  letter-spacing: 0.01em;
-}
-    .footer-copy {
-      font-size: 0.76rem;
-      color: rgba(255,255,255,0.35);
-      letter-spacing: 0.06em;
-    }
-
-    /* ── ANIMATIONS ── */
-    .fade-up {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-    .fade-up.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 900px) {
-      .hero-inner { grid-template-columns: 1fr; padding-top: 8rem; }
-      .hero-visual { display: none; }
-      .services-strip-inner { grid-template-columns: 1fr; }
-      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-      .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-      .form-row { grid-template-columns: 1fr; }
-      .nav-links { display: none; }
-    }
-
-    @media (max-width: 600px) {
-      .hero-stats { flex-direction: column; gap: 1rem; }
-      .footer-inner { flex-direction: column; gap: 1rem; text-align: center; }
-    }
-  </style>
-</head>
-<body>
-
-<!-- NAV -->
-<nav id="navbar">
-  <a href="#home" class="nav-logo">
-    <img src="consulting-k.png" alt="Kalea K mark" />
-    <span class="nav-logo-text">Kalea Consulting</span>
-  </a>
-  <ul class="nav-links">
-    <li><a href="#home">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
-  </ul>
-</nav>
+---
+layout: default
+active: home
+description: U.S.-based operations and technology firm helping businesses run better — operations, systems, and execution that hold up in the real world.
+---
 
 <!-- HERO -->
 <section id="home">
   <div class="hero-bg"></div>
   <div class="hero-inner">
     <div class="hero-text fade-up">
-      <span class="hero-eyebrow">Operations · Systems · Execution </span>
+      <span class="hero-eyebrow">Operations &middot; Systems &middot; Execution</span>
       <h1 class="hero-heading">
-        Business execution supported by systems that actually work<br>
+        Business execution supported by systems that actually work
       </h1>
       <p class="hero-subtext">
         We exist to deliver practical, actionable solutions that improve how businesses run, not just how they look on paper.
       </p>
       <div class="hero-actions">
-        <a href="#contact" class="btn-primary">Start a Conversation</a>
-        <a href="#about" class="btn-secondary">
+        <a href="/#contact" class="btn-primary">Start a Conversation</a>
+        <a href="/#about" class="btn-secondary">
           Meet the team
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
             <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -742,7 +44,7 @@
 
     <div class="hero-visual fade-up" style="transition-delay:0.15s">
       <div class="hero-banner-wrap">
-        <img src="consulting-banner.png" alt="Kalea Consulting team" />
+        <img src="/consulting-banner.png" alt="Kalea Consulting team" />
       </div>
       <div class="hero-accent-line"></div>
     </div>
@@ -752,7 +54,7 @@
 <!-- SERVICES STRIP -->
 <div class="services-strip">
   <div class="services-strip-inner">
-    
+
     <!-- Operations -->
     <div class="service-pill fade-up">
       <svg class="service-icon" viewBox="0 0 36 36" fill="none">
@@ -761,7 +63,7 @@
           stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
       </svg>
       <div>
-        <div class="service-pill-title">Operations & Decision Support</div>
+        <div class="service-pill-title">Operations &amp; Decision Support</div>
         <div class="service-pill-desc">
           We create structure, accountability, and performance visibility so the business runs consistently without constant oversight
         </div>
@@ -775,7 +77,7 @@
         <path d="M12 28h12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
       </svg>
       <div>
-        <div class="service-pill-title">Systems & Infrastructure</div>
+        <div class="service-pill-title">Systems &amp; Infrastructure</div>
         <div class="service-pill-desc">
           We build and stabilize the systems behind your business so operations run reliably and scale without breaking
         </div>
@@ -797,6 +99,15 @@
     </div>
 
   </div>
+
+  <div class="services-strip-more">
+    <a href="/services.html">
+      View all services
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
 </div>
 
 <!-- ABOUT -->
@@ -808,7 +119,7 @@
     <div class="about-grid">
       <div class="fade-up">
         <p class="about-intro">
-          Kalea Consulting is U.S. based operations and technology firm that works directly inside businesses to improve how they run, how decisions are made, and how systems support growth.
+          Kalea Consulting is a U.S.-based operations and technology firm that works directly inside businesses to improve how they run, how decisions are made, and how systems support growth.
         </p>
         <p class="about-intro">
           We don't sell bloated engagements or generic solutions. We listen first, then build practical paths forward grounded in real-world experience.
@@ -821,43 +132,43 @@
         </ul>
       </div>
 
-<div class="team-cards fade-up" style="transition-delay:0.15s">
-  <div class="team-card">
-    <div class="team-avatar">B</div>
-    <div class="team-info">
-      <div class="team-name">Blake</div>
-      <div class="team-role">Cloud & Infrastructure</div>
-      <div class="team-bio">
-        Blake designs, builds, and stabilizes the systems businesses rely on to operate day-to-day. He focuses on ensuring infrastructure is secure, reliable, and aligned with how the business actually runs, so systems support growth instead of becoming a constraint. His work emphasizes long-term stability, clear architecture, and environments that can scale without constant rework or disruption.
+      <div class="team-cards fade-up" style="transition-delay:0.15s">
+        <div class="team-card">
+          <div class="team-avatar">B</div>
+          <div class="team-info">
+            <div class="team-name">Blake</div>
+            <div class="team-role">Cloud &amp; Infrastructure</div>
+            <div class="team-bio">
+              Blake designs, builds, and stabilizes the systems businesses rely on to operate day-to-day. He focuses on ensuring infrastructure is secure, reliable, and aligned with how the business actually runs, so systems support growth instead of becoming a constraint. His work emphasizes long-term stability, clear architecture, and environments that can scale without constant rework or disruption.
+            </div>
+          </div>
         </div>
-    </div>
-  </div> <!-- ✅ THIS WAS MISSING -->
 
-  <div class="team-card">
-    <div class="team-avatar">M</div>
-    <div class="team-info">
-      <div class="team-name">Matt</div>
-      <div class="team-role">Operations & Financial Performance</div>
-      <div class="team-bio">
-        Matt works directly inside the business to improve how operations run, how decisions are made, and how performance is measured. He focuses on building structure, accountability, and visibility so the business operates predictably and leadership can focus on growth instead of daily problem-solving.
+        <div class="team-card">
+          <div class="team-avatar">M</div>
+          <div class="team-info">
+            <div class="team-name">Matt</div>
+            <div class="team-role">Operations &amp; Financial Performance</div>
+            <div class="team-bio">
+              Matt works directly inside the business to improve how operations run, how decisions are made, and how performance is measured. He focuses on building structure, accountability, and visibility so the business operates predictably and leadership can focus on growth instead of daily problem-solving.
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
-</div>
-</div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
   <div class="section-inner">
     <p class="section-label fade-up">Get in Touch</p>
-    <h2 class="section-heading fade-up">Let’s talk about how your business is running.</h2>
+    <h2 class="section-heading fade-up">Let&rsquo;s talk about how your business is running.</h2>
 
     <div class="contact-grid">
       <div class="fade-up">
         <p class="contact-intro">
-          If something isn’t running right, let’s talk through it and figure out what needs to change.
+          If something isn&rsquo;t running right, let&rsquo;s talk through it and figure out what needs to change.
         </p>
 
         <div class="contact-detail">
@@ -882,7 +193,7 @@
         </div>
       </div>
 
-      <form class="contact-form fade-up" style="transition-delay:0.15s" onsubmit="handleSubmit(event)" action="https://formspree.io/f/mykogdvw" method="POST">
+      <form class="contact-form fade-up" style="transition-delay:0.15s" action="https://formspree.io/f/mykogdvw" method="POST">
         <div class="form-row">
           <div class="form-group">
             <label for="name">Name</label>
@@ -901,10 +212,10 @@
           <label for="interest">I'm interested in</label>
           <select id="interest" name="interest">
             <option value="">Select a service area...</option>
-            <option>Operations & Decision Support</option>
-            <option>Systems & Infrastructure</option>
+            <option>Operations &amp; Decision Support</option>
+            <option>Systems &amp; Infrastructure</option>
             <option>Execution</option>
-             <option>Fractional Leadership</option>
+            <option>Fractional Leadership</option>
             <option>Something else</option>
           </select>
         </div>
@@ -912,82 +223,8 @@
           <label for="message">Message</label>
           <textarea id="message" name="message" placeholder="Tell us a bit about what you're working on..."></textarea>
         </div>
-        <button type="submit" class="form-submit">Send Message →</button>
+        <button type="submit" class="form-submit">Send Message &rarr;</button>
       </form>
     </div>
   </div>
 </section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-logo">
-      <img src="consulting-k.png" alt="Kalea K" />
-      <span class="footer-logo-text">Kalea Consulting</span>
-    </div>
-    <p class="footer-copy">© 2025 Kalea Consulting. Sarasota, FL.</p>
-  </div>
-</footer>
-
-<script>
-  // Nav scroll effect
-  const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 20);
-  });
-
-  // Fade-up on scroll
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        observer.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.12 });
-
-  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-
-  // Trigger hero elements on load
-  window.addEventListener('load', () => {
-    document.querySelectorAll('#home .fade-up').forEach(el => {
-      setTimeout(() => el.classList.add('visible'), 100);
-    });
-  });
-
-  async function handleSubmit(e) {
-    e.preventDefault();
-    const form = e.target;
-    const btn = form.querySelector('.form-submit');
-    btn.textContent = 'Sending...';
-    btn.disabled = true;
-
-    try {
-      const response = await fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
-      });
-
-      if (response.ok) {
-        btn.textContent = 'Message sent ✓';
-        btn.style.background = '#bc948d';
-        form.reset();
-        setTimeout(() => {
-          btn.textContent = 'Send Message →';
-          btn.style.background = '';
-          btn.disabled = false;
-        }, 4000);
-      } else {
-        throw new Error('Form submission failed');
-      }
-    } catch (err) {
-      btn.textContent = 'Something went wrong — try emailing us directly';
-      btn.style.background = '#a05050';
-      btn.disabled = false;
-    }
-  }
-</script>
-
-</body>
-</html>

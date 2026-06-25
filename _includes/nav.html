@@ -1,0 +1,21 @@
+<!--
+  Shared navigation. Edit this ONE file to change the nav everywhere.
+  Pass the current page with:  {% include nav.html active="services" %}
+-->
+<nav id="navbar">
+  <a href="/" class="nav-logo">
+    <img src="/consulting-k.png" alt="Kalea K mark" />
+    <span class="nav-logo-text">Kalea Consulting</span>
+  </a>
+
+  <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+    <span></span><span></span><span></span>
+  </button>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="/"{% if include.active == "home" %} class="active"{% endif %}>Home</a></li>
+    <li><a href="/services.html"{% if include.active == "services" %} class="active"{% endif %}>Services</a></li>
+    <li><a href="/#about">About</a></li>
+    <li><a href="/#contact" class="nav-cta">Get in Touch</a></li>
+  </ul>
+</nav>

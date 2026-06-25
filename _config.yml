@@ -1,0 +1,14 @@
+# Kalea Consulting — site config
+title: Kalea Consulting
+description: U.S.-based operations and technology firm helping businesses run better.
+url: "https://kaleafirm.com"
+baseurl: ""          # apex custom domain — served from root, leave empty
+
+# Build settings
+markdown: kramdown
+
+# Keep these out of the built site
+exclude:
+  - README.md
+  - LICENSE
+  - .gitignore
