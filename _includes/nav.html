@@ -1,7 +1,4 @@
-{%- comment -%}
-  Shared navigation. Edit this ONE file to change the nav everywhere.
-{%- endcomment -%}
-
+{%- comment -%}Shared navigation. Edit once, applies everywhere.{%- endcomment -%}
 <nav id="navbar">
   <a href="/" class="nav-logo">
     <img src="/consulting-k.png" alt="Kalea K mark" />
@@ -15,6 +12,8 @@
   <ul class="nav-links" id="navLinks">
     <li><a href="/"{% if include.active == "home" %} class="active"{% endif %}>Home</a></li>
     <li><a href="/services.html"{% if include.active == "services" %} class="active"{% endif %}>Services</a></li>
+    <li><a href="/work.html"{% if include.active == "work" %} class="active"{% endif %}>Our Work</a></li>
+    <li><a href="/pricing.html"{% if include.active == "pricing" %} class="active"{% endif %}>Pricing</a></li>
     <li><a href="/#about">About</a></li>
     <li><a href="/#contact" class="nav-cta">Get in Touch</a></li>
   </ul>
