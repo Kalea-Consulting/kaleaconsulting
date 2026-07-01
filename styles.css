@@ -480,8 +480,10 @@ section { padding: 6rem 5vw; }
   text-decoration: none;
   display: block;
   width: fit-content;
-  margin: 2rem auto 0;
-  align-self: center;
+
+  margin: 2.5rem auto 0;
+
+  align-self: center !important;
 }
 
 /* ── ABOUT ────────────────────────────────────────────── */
