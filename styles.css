@@ -476,14 +476,12 @@ section { padding: 6rem 5vw; }
 }
 .btn-cream:hover { background: #fff3da; transform: translateY(-1px); }
 
-.model-card .model-card-button {
-  text-decoration: none;
+.model-card a.form-submit.model-card-button {
   display: block;
   width: fit-content;
-
   margin: 2.5rem auto 0;
-
   align-self: center !important;
+  text-decoration: none;
 }
 
 /* ── ABOUT ────────────────────────────────────────────── */
