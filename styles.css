@@ -476,7 +476,7 @@ section { padding: 6rem 5vw; }
 }
 .btn-cream:hover { background: #fff3da; transform: translateY(-1px); }
 
-.model-card-button {
+.model-card .model-card-button {
   text-decoration: none;
   display: block;
   width: fit-content;
