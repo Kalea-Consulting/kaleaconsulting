@@ -479,8 +479,7 @@ section { padding: 6rem 5vw; }
 /* ── MODEL CARD BUTTON ────────────────────────────────── */
 .btn-model {
   display: inline-block;
-  margin-top: 1.8rem;
-  align-self: flex-start;
+  margin: 1.8rem auto 0;
 
   background: var(--navy);
   color: var(--white);
@@ -499,6 +498,7 @@ section { padding: 6rem 5vw; }
 
 .btn-model:hover {
   background: var(--navy-light);
+  color: var(--white);
   transform: translateY(-1px);
 }
 
