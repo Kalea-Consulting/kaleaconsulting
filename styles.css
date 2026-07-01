@@ -476,6 +476,32 @@ section { padding: 6rem 5vw; }
 }
 .btn-cream:hover { background: #fff3da; transform: translateY(-1px); }
 
+/* ── MODEL CARD BUTTON ────────────────────────────────── */
+.btn-model {
+  display: inline-block;
+  margin-top: 1.8rem;
+  align-self: flex-start;
+
+  background: var(--navy);
+  color: var(--white);
+  text-decoration: none;
+
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+
+  padding: 0.9rem 2rem;
+  border-radius: 2px;
+
+  transition: background 0.2s, transform 0.2s;
+}
+
+.btn-model:hover {
+  background: var(--navy-light);
+  transform: translateY(-1px);
+}
+
 /* ── ABOUT ────────────────────────────────────────────── */
 #about { background: var(--cream-light); }
 #about .section-label, #about .section-heading { text-align: center; }
