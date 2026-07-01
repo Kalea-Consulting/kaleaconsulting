@@ -650,7 +650,7 @@ section { padding: 6rem 5vw; }
 }
 
 .model-card-button-wrap .model-card-button {
-  align-self: unset;
+  align-self: center !important;
   text-decoration: none;
 }
 
