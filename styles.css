@@ -19,7 +19,7 @@
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: 'Jost', sans-serif;
+  font-family: 'Jost', sans-serif;model
   color: var(--text-body);
   background: var(--white);
   overflow-x: hidden;
@@ -642,11 +642,15 @@ section { padding: 6rem 5vw; }
 }
 .form-submit:hover { background: var(--navy-light); transform: translateY(-1px); }
 
-.model-card a.form-submit.model-card-button {
-  display: block;
-  width: fit-content;
-  margin: 2.5rem auto 0;
-  align-self: center !important;
+.model-card-button-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5rem;
+}
+
+.model-card-button-wrap .model-card-button {
+  align-self: unset;
   text-decoration: none;
 }
 
