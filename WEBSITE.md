@@ -1,5 +1,9 @@
 # Kalea Consulting — Website Reference
+<<<<<<< HEAD
 *Last updated: July 3, 2026 (Roadmap added)*
+=======
+*Last updated: July 3, 2026*
+>>>>>>> e58126b957a9cc7fe821e91f648b7a0ade4d42d0
 
 ---
 
@@ -212,6 +216,7 @@ All deployment steps completed — `about.html` in repo, styles appended, homepa
 
 ---
 
+<<<<<<< HEAD
 ## Roadmap / Next Steps
 
 Open items, roughly grouped. Nothing here has been built yet — these are tracked for planning purposes.
@@ -235,6 +240,12 @@ Still being scoped — two distinct possible directions, not yet decided:
 ### Housekeeping
 - **`pricing.html` URL** — file is named `pricing.html` but labeled "How We Work" in nav and on page. Renaming would require a `_redirects` file for backwards compatibility. Low priority.
 - **Commit message discipline** — ongoing conversation with Matt about descriptive commit messages given Cloudflare Pages deploys directly on push with no staging step.
+=======
+## In Progress
+
+- **Matt's case studies** — operations/financial performance engagements to be added to `work.html`. Placeholder card is live. Source material: Matt's Upwork profile history.
+- **`pricing.html` URL** — file is named `pricing.html` but labeled "How We Work" in nav and on page. Renaming would require a `_redirects` file for backwards compatibility. Low priority.
+>>>>>>> e58126b957a9cc7fe821e91f648b7a0ade4d42d0
 
 ---
 
