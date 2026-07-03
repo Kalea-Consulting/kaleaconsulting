@@ -262,6 +262,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(42,61,83,0.10); }
   margin-top: 3rem;
   padding-top: 2rem;
   border-top: 1px solid rgba(42,61,83,0.10);
+  justify-content: center;
 }
 .stat-number {
   font-family: 'Cormorant Garamond', serif;
