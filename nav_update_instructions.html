@@ -1,0 +1,11 @@
+<!-- ============================================================
+     NAV UPDATE — _includes/nav.html
+     Change the About link from /#about to /about.html
+     and add the active conditional.
+
+     FIND this line:
+       <li><a href="/#about">About</a></li>
+
+     REPLACE with:
+       <li><a href="/about.html"{% if include.active == "about" %} class="active"{% endif %}>About</a></li>
+     ============================================================ -->

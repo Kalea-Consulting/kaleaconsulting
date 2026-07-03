@@ -19,7 +19,7 @@
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: 'Jost', sans-serif;model
+  font-family: 'Jost', sans-serif;
   color: var(--text-body);
   background: var(--white);
   overflow-x: hidden;
@@ -1048,4 +1048,259 @@ footer { background: var(--navy); padding: 2.5rem 5vw; }
   .cost-drivers-grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .case-grid { grid-template-columns: 1fr; }
   .work-filters-inner { overflow-x: auto; }
+}
+
+/* ── ABOUT PAGE ───────────────────────────────────────── */
+.about-detail { background: var(--white); padding: 5rem 5vw; }
+
+.team-detail-block {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 4rem;
+  padding: 3rem 0;
+}
+
+.team-detail-divider {
+  border: none;
+  border-top: 1px solid rgba(42,61,83,0.10);
+  margin: 1rem 0;
+}
+
+.team-detail-aside {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.team-detail-avatar {
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  background: var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--cream);
+  flex-shrink: 0;
+}
+
+.team-detail-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1.1;
+}
+.team-detail-role {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mauve);
+  margin-top: 0.2rem;
+}
+.team-detail-location {
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: #8a8f9a;
+  margin-top: 0.1rem;
+}
+
+.team-detail-credentials {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(42,61,83,0.08);
+}
+.cred-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #8a8f9a;
+}
+.cred-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+.cred-badge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--white);
+  background: var(--navy);
+  border-radius: 2px;
+  padding: 0.2rem 0.5rem;
+  flex-shrink: 0;
+  margin-top: 0.05rem;
+}
+.cred-name {
+  font-size: 0.82rem;
+  font-weight: 300;
+  color: var(--navy);
+  line-height: 1.4;
+}
+
+.profile-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--navy);
+  text-decoration: none;
+  border: 1px solid rgba(42,61,83,0.20);
+  border-radius: 2px;
+  padding: 0.5rem 0.9rem;
+  transition: border-color 0.2s, color 0.2s;
+}
+.profile-link:hover { color: var(--mauve); border-color: var(--mauve); }
+
+.team-detail-bio {
+  font-size: 0.98rem;
+  font-weight: 300;
+  line-height: 1.85;
+  color: #5a6272;
+  margin-bottom: 1rem;
+}
+
+.skills-section {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(42,61,83,0.08);
+}
+.skills-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #8a8f9a;
+  display: block;
+  margin-bottom: 1.2rem;
+}
+.skills-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.skill-group { display: flex; flex-direction: column; gap: 0.5rem; }
+.skill-group-title {
+  font-size: 0.76rem;
+  font-weight: 500;
+  color: var(--navy);
+  letter-spacing: 0.06em;
+}
+.skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.skill-tag {
+  font-size: 0.76rem;
+  font-weight: 400;
+  color: var(--navy);
+  background: var(--cream-light);
+  border: 1px solid rgba(42,61,83,0.08);
+  border-radius: 2px;
+  padding: 0.28rem 0.65rem;
+}
+
+/* Philosophy section */
+.philosophy-section { background: var(--cream-light); padding: 5rem 5vw; }
+.philosophy-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 5rem;
+  align-items: start;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.philosophy-intro {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.85;
+  color: #5a6272;
+  margin-bottom: 1rem;
+}
+.philosophy-values { display: flex; flex-direction: column; gap: 0; }
+.phil-value {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 1.3rem 0;
+  border-bottom: 1px solid rgba(42,61,83,0.09);
+}
+.phil-value:first-child { padding-top: 0; }
+.phil-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--navy);
+}
+.phil-desc {
+  font-size: 0.88rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: #5a6272;
+}
+
+/* ── HOMEPAGE MISSION SECTION ─────────────────────────── */
+#about { background: var(--cream-light); padding: 6rem 5vw; }
+#about .section-label { text-align: center; }
+#about .section-heading {
+  text-align: center;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3.5rem;
+}
+
+.mission-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.mission-block {
+  background: var(--white);
+  border: 1px solid rgba(42,61,83,0.08);
+  border-radius: 3px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.mission-block:hover {
+  box-shadow: 0 8px 30px rgba(42,61,83,0.08);
+  transform: translateY(-2px);
+}
+.mission-kicker {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--mauve);
+}
+.mission-text {
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: #5a6272;
+}
+
+.mission-cta {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+/* ── RESPONSIVE ADDITIONS ─────────────────────────────── */
+@media (max-width: 900px) {
+  .team-detail-block { grid-template-columns: 1fr; gap: 2rem; }
+  .philosophy-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .mission-grid { grid-template-columns: 1fr; }
 }
