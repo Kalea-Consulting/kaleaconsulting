@@ -1,5 +1,5 @@
 # Kalea Consulting — Website Reference
-*Last updated: July 2, 2026*
+*Last updated: July 3, 2026*
 
 ---
 
@@ -89,13 +89,15 @@ Nav links in order (as of July 2026):
 | Label | URL | Notes |
 |---|---|---|
 | Home | `/` | |
-| Our Services | `/services.html` | Note: label is "Our Services" not "Services" |
+| Our Services | `/services.html` | Label is "Our Services" not "Services" |
 | Our Work | `/work.html` | |
-| How We Work | `/pricing.html` | Note: label is "How We Work" not "Pricing" |
-| About | `/about.html` | Recently moved from `/#about` anchor |
+| How We Work | `/pricing.html` | Label is "How We Work" not "Pricing" |
+| About | `/about.html` | Standalone page — moved from `/#about` anchor |
 | Get in Touch | `/#contact` | Navy CTA button |
 
 **Important:** The nav labels on the live site differ from the original build. `services.html` is labeled "Our Services" and `pricing.html` is labeled "How We Work". Keep these labels in sync if adding new pages.
+
+**Note on URL structure:** `/pricing.html` is intentionally kept as the filename even though the page is labeled "How We Work." Renaming the file to match would require a `_redirects` file to avoid 404s on any existing links. Low priority for now.
 
 ---
 
@@ -109,19 +111,22 @@ Single scroll page. Sections:
 - Headline: *"Helping businesses run better."*
 - Subtext: *"We align people, operations, and technology to build stronger businesses through practical execution and long-term thinking."*
 - Eyebrow: "Operations · Systems · Execution"
-- CTAs: "Start a Conversation" → `/#contact` | "Meet the team" → `/#about`
+- CTAs: "Start a Conversation" → `/#contact` | "Meet the team" → `/about.html`
 - Stats row: Operations (People | Process | Performance) · Systems (Infrastructure | Cloud | Security) · Execution (Implementation | Integration | Automation)
 
 **Services Strip** (navy band)
 - Three pills: Operations & Decision Support · Systems & Infrastructure · Execution
 - CTA link: "Start Your Journey" → `/pricing.html`
 
-**About Section** (`#about`)
-- Heading: *"People. Operations. Systems. Executing as one."*
-- Intro copy updated to focus on "build stronger foundations, improve day-to-day performance, and grow with confidence"
-- Values list updated (4 items)
-- Blake and Matt team cards — bios significantly rewritten from original (see About page section below for full bios)
-- **Pending:** This section is being replaced with a Mission/Vision block as part of the About page split (see In Progress section below)
+**Who We Are Section** (`#about`)
+- Label: "Who We Are"
+- Heading: *"Built for businesses that do real work."*
+- Three Mission/Vision cards:
+  - **Our Mission** — combine operational leadership and technical expertise into practical solutions
+  - **Our Vision** — businesses not held back by systems; trades/SMB owners with infrastructure to grow
+  - **Who We Serve** — owner-operated businesses, trades, field services, growing SMBs
+- CTA button: "Meet the Team" → `/about.html`
+- Team cards and bios moved to dedicated `/about.html` page
 
 **Contact Section** (`#contact`)
 - Heading: *"Let's talk about business."*
@@ -194,7 +199,7 @@ Largely intact from original build structurally. Filter tabs, two sections (Syst
 
 ### About (`about.html`)
 
-**Status: In progress — built but not yet deployed as of July 2, 2026.**
+**Status: Live as of July 3, 2026.**
 
 Full resume-style page with:
 - Page hero: *"Two disciplines. One firm."*
@@ -203,28 +208,14 @@ Full resume-style page with:
 - Philosophy section: *"Built for businesses that do real work."* — blue collar/SMB niche positioning, four values
 - CTA band
 
-**To deploy:**
-1. Add `about.html` to repo root
-2. Append `styles_additions.css` content to `styles.css`
-3. Replace `#about` section in `index.html` with Mission/Vision block
-4. Update nav About link from `/#about` to `/about.html`
+All deployment steps completed — `about.html` in repo, styles appended, homepage section replaced, nav updated.
 
 ---
 
-## In Progress — About Page Split
+## In Progress
 
-The current `#about` section on the homepage (team cards + bios) is being replaced with a Mission/Vision section, and the full team/about content is moving to its own `/about.html` page.
-
-**Homepage replacement section** (Mission/Vision) — three cards:
-- Our Mission — practical solutions combining operational leadership and technical expertise
-- Our Vision — businesses not held back by their systems; trades/SMB owners with infrastructure to grow
-- Who We Serve — owner-operated businesses, trades, field services, growing SMBs
-
-**Files delivered (not yet in repo):**
-- `about.html` — full about page
-- `homepage_about_replacement.html` — drop-in replacement for `#about` section in `index.html`
-- `styles_additions.css` — append to `styles.css`
-- Nav change: `/#about` → `/about.html` with active conditional
+- **Matt's case studies** — operations/financial performance engagements to be added to `work.html`. Placeholder card is live. Source material: Matt's Upwork profile history.
+- **`pricing.html` URL** — file is named `pricing.html` but labeled "How We Work" in nav and on page. Renaming would require a `_redirects` file for backwards compatibility. Low priority.
 
 ---
 
@@ -316,7 +307,7 @@ Dropdown options (current):
 - **Line endings:** Git on Windows will warn about LF → CRLF conversion. Harmless — ignore it
 - **Browser cache:** Cloudflare caches aggressively — always test in incognito or hard refresh (`Ctrl+Shift+R`) after deploy
 - **`styles.css` typo (fixed):** A stray `model` word was inserted into the `body` font-family rule during editing. Fixed with a targeted commit. Watch for this kind of thing when editing CSS directly in GitHub's web editor
-- **Page title vs nav label mismatch:** `pricing.html` has `<title>Pricing</title>` but the nav calls it "How We Work." Worth aligning eventually
+- **`pricing.html` filename vs label:** File is named `pricing.html` but displayed as "How We Work" everywhere. The `<title>` now correctly reads "How We Work." The filename mismatch is intentional for now — renaming would need a `_redirects` entry
 - **Two brand palettes:** Warm navy/mauve/cream (this site) and cool teal (Word documents in `kalea_base.js`). Intentionally separate — do not mix
 - **Mobile nav:** Hamburger menu implemented in `main.js` and `styles.css` — was missing from the original single-file site
 - **Upwork blocks automated fetching** — profile content must be copied manually for case studies
