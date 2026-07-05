@@ -184,7 +184,11 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(42,61,83,0.10); }
   color: var(--navy);
   margin-bottom: 1.5rem;
 }
-.hero-heading em { font-style: italic; color: var(--mauve); }
+.hero-heading em,
+.section-heading em {
+  font-style: italic;
+  color: var(--mauve);
+}
 
 .hero-subtext {
   font-size: 1rem;
