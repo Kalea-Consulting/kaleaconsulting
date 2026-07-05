@@ -355,6 +355,10 @@ section { padding: 6rem 5vw; }
   margin-bottom: 1.5rem;
 }
 
+.section-heading strong {
+  font-weight: 700;
+}
+
 /* ── INTERIOR PAGE HERO (services / pricing / case studies) ── */
 .page-hero {
   position: relative;
