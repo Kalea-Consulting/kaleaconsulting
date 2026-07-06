@@ -1256,6 +1256,9 @@ footer { background: var(--navy); padding: 2.5rem 5vw; }
   border-radius: 2px;
   padding: 0.28rem 0.65rem;
 }
+.pricing-intro-band .skill-tags {
+  justify-content: center;
+}
 
 /* Philosophy section */
 .philosophy-section { background: var(--cream-light); padding: 5rem 5vw; }
