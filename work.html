@@ -22,12 +22,12 @@ description: Case studies from Kalea Consulting — real engagements across netw
   <div class="work-filters-inner">
     <button class="filter-btn active" data-filter="all">All Work</button>
     <button class="filter-btn" data-filter="systems">Systems &amp; Infrastructure</button>
-    <button class="filter-btn" data-filter="operations">Operations &amp; Automation</button>
+    <button class="filter-btn" data-filter="operations">Operations &amp; Strategy</button>
   </div>
 </div>
 
 <!-- CASE STUDIES — BLAKE / SYSTEMS -->
-<section class="work-section">
+<section class="work-section" data-category-section="systems">
   <div class="section-inner">
 
     <div class="work-category-label fade-up">
@@ -143,11 +143,11 @@ description: Case studies from Kalea Consulting — real engagements across netw
 </section>
 
 <!-- CASE STUDIES — OPERATIONS / AUTOMATION -->
-<section class="work-section work-section--alt">
+<section class="work-section work-section--alt" data-category-section="operations">
   <div class="section-inner">
 
     <div class="work-category-label fade-up">
-      <span class="section-label">Operations &amp; Automation</span>
+      <span class="section-label">Operations &amp; Strategy</span>
     </div>
 
     <div class="case-grid">
@@ -232,20 +232,31 @@ description: Case studies from Kalea Consulting — real engagements across netw
 </div>
 
 <script>
-// Filter tabs
 const filterBtns = document.querySelectorAll('.filter-btn');
 const caseCards = document.querySelectorAll('.case-card');
+const workSections = document.querySelectorAll('.work-section');
+
 filterBtns.forEach(btn => {
   btn.addEventListener('click', () => {
     filterBtns.forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
+
     const filter = btn.dataset.filter;
+
     caseCards.forEach(card => {
-      if (filter === 'all' || card.dataset.category === filter) {
-        card.style.display = '';
-      } else {
-        card.style.display = 'none';
-      }
+      card.style.display =
+        filter === 'all' || card.dataset.category === filter
+          ? ''
+          : 'none';
+    });
+
+    workSections.forEach(section => {
+      const sectionCategory = section.dataset.categorySection;
+
+      section.style.display =
+        filter === 'all' || sectionCategory === filter
+          ? ''
+          : 'none';
     });
   });
 });
