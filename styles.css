@@ -1296,6 +1296,25 @@ footer { background: var(--navy); padding: 2.5rem 5vw; }
   height: 108px;
   object-fit: contain;
 }
+.partner-link-wrap {
+  text-align: center;
+  margin: 0.4rem 0 1.6rem;
+}
+.partner-badge-link {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cream);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(254,235,199,0.4);
+  transition: color 0.2s, border-color 0.2s;
+}
+.partner-badge-link:hover {
+  color: var(--mauve);
+  border-color: var(--mauve);
+}
 .partner-badge-label {
   font-size: 0.7rem;
   font-weight: 500;
