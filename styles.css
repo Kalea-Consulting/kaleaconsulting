@@ -1353,9 +1353,15 @@ footer { background: var(--navy); padding: 2.5rem 5vw; }
   color: rgba(255,255,255,0.7);
   text-align: center;
 }
-a.partner-badge {
+a.partner-badge,
+a.partner-badge:link,
+a.partner-badge:visited,
+a.partner-badge:hover,
+a.partner-badge:active {
   text-decoration: none;
   color: inherit;
+}
+a.partner-badge {
   transition: opacity 0.2s ease;
 }
 a.partner-badge:hover {
