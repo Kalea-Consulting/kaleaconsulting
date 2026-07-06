@@ -1,5 +1,5 @@
 # Kalea Consulting — Website Reference
-*Last updated: July 3, 2026 (Roadmap added)*
+*Last updated: July 6, 2026 (Deep dive — homepage, work, and about pages substantially rewritten)*
 
 ---
 
@@ -7,7 +7,8 @@
 
 **Live URL:** https://kaleafirm.com
 **GitHub Repo:** https://github.com/Kalea-Consulting/kaleaconsulting
-**Local Repo (Blake):** `D:\CodeProjects\kalea_website`
+**Local Repo (Blake — desktop):** `C:\Users\blake\Dev\kalea-website`
+**Local Repo (Blake — laptop):** `D:\CodeProjects\kalea_website`
 **Hosting:** Cloudflare Pages (auto-deploys on push to `main`)
 **Build system:** Jekyll (Cloudflare Pages runs `jekyll build` automatically)
 **DNS:** Cloudflare — root CNAME points to `kaleaconsulting.pages.dev`
@@ -111,30 +112,31 @@ Single scroll page. Sections:
 - Headline: *"Helping businesses run better."*
 - Subtext: *"We align people, operations, and technology to build stronger businesses through practical execution and long-term thinking."*
 - Eyebrow: "Operations · Systems · Execution"
-- CTAs: "Start a Conversation" → `/#contact` | "Meet the team" → `/about.html`
+- CTAs: "Start a Conversation" → `/#contact` | **"Our Story"** → `/about.html` *(changed from "Meet the team")*
 - Stats row: Operations (People | Process | Performance) · Systems (Infrastructure | Cloud | Security) · Execution (Implementation | Integration | Automation)
 
 **Services Strip** (navy band)
 - Three pills: Operations & Decision Support · Systems & Infrastructure · Execution
 - CTA link: "Start Your Journey" → `/pricing.html`
 
-**Who We Are Section** (`#about`)
-- Label: "Who We Are"
-- Heading: *"Built for businesses that do real work."*
-- Three Mission/Vision cards:
-  - **Our Mission** — combine operational leadership and technical expertise into practical solutions
-  - **Our Vision** — businesses not held back by systems; trades/SMB owners with infrastructure to grow
-  - **Who We Serve** — owner-operated businesses, trades, field services, growing SMBs
-- CTA button: "Meet the Team" → `/about.html`
-- Team cards and bios moved to dedicated `/about.html` page
+**"Our Promise" Section** (`#about`) — *rewritten again, replaces the earlier Mission/Vision version*
+- Label: "Our Promise"
+- Heading: *"Built on **integrity**. Guided by **practical leadership**. Driven by **execution**."* — three separate `<em>` accents in one heading (confirm CSS handles multiple `em` spans per heading — it should, since the rule targets the element not a count, but worth a visual check)
+- Three text blocks (no longer cards — appears to be plain text blocks now, not the bordered `.mission-block` cards from the original build):
+  - **Why we exist** — "We help businesses run better by aligning people, operations, and technology through practical execution."
+  - **Where we're going** — vision statement about growing businesses having access to practical leadership, modern technology, and operational support
+  - **How we help** — ties back to the people/operations/systems triad
+- CTA: **"Our Philosophy"** → `/about.html#better-together` — links to a specific anchor on the About page (see below)
 
 **Contact Section** (`#contact`)
-- Heading: *"Let's talk about business."*
-- Subtext: *"Tell us what you're working on, where you're running into challenges, or where you want to take your business next."*
+- Heading: *"Let's talk about your business."* *(changed from "Let's talk about business.")*
+- Subtext: *"Tell us what you're working on, where you're running into challenges, or where you want to take your business next. We'll help you determine the best path forward."*
 - Two phone numbers: USA (623) 738-5101 · CAN (604) 332-0157
 - Email: hello@kaleafirm.com
 - Location: Sarasota, FL
 - Contact form dropdown options: Build the Foundation (Start Better) · Optimize the Business (Run Better) · Lead with Confidence (Grow Better) · I'm not sure · Existing Client · General Question
+
+**Note:** The homepage `#about` section has now been rewritten twice since the original build (first to Mission/Vision cards, now to the "Our Promise" three-block version). If `.mission-block`/`.mission-grid` CSS classes are no longer used anywhere in the HTML, they're dead weight in `styles.css` — worth a cleanup pass next time you're in there.
 
 ---
 
@@ -191,49 +193,105 @@ Closes with a values block (Practical Execution · Clear Communication · Long-T
 
 ### Our Work (`work.html`)
 
-Largely intact from original build structurally. Filter tabs, two sections (Systems / Operations), case study cards.
+**Substantially expanded.** Filter tabs renamed: All Work · Systems & Infrastructure · **Operations & Strategy** *(was "Operations & Automation")*.
 
-**Pending:** Matt's operations case studies to be added to the Operations section. Placeholder card is live.
+**Systems & Infrastructure — now three case studies (was two):**
+
+1. **NEW — UniFi VLAN Design** ("Home network redesigned for security, clarity, and long-term growth") — includes a **5-star client testimonial quote**, credited by first name in the review text ("...I sought guidance from Matt and his team...")
+2. **Tailscale Remote Access** (unchanged problem/solution/outcome copy) — **now also has a 5-star testimonial** quoting the client praising Blake by name
+3. **UniFi Network Segmentation** (unchanged) — no testimonial
+
+This is new: **case cards can now include a star-rating + client quote block.** If this doesn't have dedicated CSS yet, that's likely part of what needs styling — a blockquote-style testimonial with star icons, distinct from the Problem/Solution/Outcome body text.
+
+**Operations & Strategy — Matt's case studies have landed, placeholder card is gone:**
+
+The House2Home engagement is now split into **two parallel ongoing case studies** rather than one combined card:
+
+1. **Fractional CIO / Technology Strategy** (Blake's side) — Jobber optimization, **Claude AI and MCP integration**, workflow automation, business systems planning
+2. **Fractional COO / Operations Strategy** (Matt's side) — Jobber + QuickBooks, pricing strategy, job costing, bookkeeping workflows, KPI reporting, SOPs
+
+Both tagged "Ongoing," both industry-tagged "Landscaping & Field Services," both use the Problem/Solution/"Current Progress" structure (renamed from "The Outcome" since these are active, not completed).
+
+**Closing CTA changed:** *"Your business could be the next success story."* → "Start a Conversation" (was "Running a business that's great at what it does?")
 
 ---
 
 ### About (`about.html`)
 
-**Status: Live as of July 3, 2026.**
+**Status: Substantially rewritten — live as of July 2026.** This is no longer the resume-style page from the original build; it's grown into a much more personal, narrative page.
 
-Full resume-style page with:
-- Page hero: *"Two disciplines. One firm."*
-- Blake section: full bio, AZ-104 credential, skills grid (Cloud & Infrastructure / Networking / Business Systems), Upwork profile link
-- Matt section: full bio, CMA Candidate credential, skills grid (Operations / Finance & Performance / Leadership), Upwork profile link
-- Philosophy section: *"Built for businesses that do real work."* — blue collar/SMB niche positioning, four values
-- CTA band
+**Page hero**
+- Label: "Our Story"
+- Heading: *"Built because people **deserve better.**"*
+- Intro: people/operations/systems-first philosophy — "Build, sustain, and grow the business around people first. When people thrive, businesses thrive."
 
-All deployment steps completed — `about.html` in repo, styles appended, homepage section replaced, nav updated.
+**Blake Rice — Technology & Infrastructure** (Chilliwack, BC — Canada)
+- *Education:* B.Sc. Bachelor of Computer Science — University of the Fraser Valley (Major: Computer Information Systems · Minor: Business Administration); PCC — Professional Communications Certificate, UFV
+- *Certifications:* AZ-104 — Microsoft Certified Azure Administrator
+- Professional bio paragraph (expanded from original)
+- **New — personal paragraph:** family (wife + five kids), hockey/lacrosse, camping, hiking, curling, football, dreams of sailing the coast
+- **New — closing pull-quote:** *"Though the mountains be shaken and the hills be removed, yet my unfailing love for you will not be shaken nor my covenant of peace be removed"* — Isaiah 54:10
+- Upwork profile link
+
+**Matt Schlagel — Operations & Strategy** (Sarasota, FL — USA)
+- *Education:* B.S. Bachelor of Science — Arizona State University (Major: Business Data Analytics · **4.0 Summa Cum Laude**) — *updated from the earlier "Bachelor of Science in Business"*
+- *Certifications — expanded significantly:*
+  - CMA — Certified Management Accountant Candidate
+  - **QBO — Intuit ProAdvisor QuickBooks, Level 1 & 2** *(new)*
+  - **P-BI — Microsoft Power BI Data Analyst** *(new)*
+  - **TAB — Tableau Data Analyst** *(new)*
+  - **PY — Python Data Analyst** *(new)*
+- Professional bio paragraph (expanded)
+- **New — personal paragraph:** moved from Colorado to the Florida coast, travel, fishing, three-legged cat named Leilani, beekeeping/chickens/ducks
+- **New — closing pull-quote:** *"The only reason for time is so that everything doesn't happen at once."* — Albert Einstein
+- Upwork profile link
+
+**"Better Together" Section** — `id="better-together"` *(new — this is the anchor the homepage "Our Philosophy" CTA links to)*
+- Heading: *"More than **operations.** More than **technology.**"*
+- Combined narrative paragraph on why the two disciplines work together
+- Four pillars (no longer a bullet list — reads as a labeled paragraph grid now): **People** · **Operations** · **Systems** · **Execution as One**
+
+**"Partnerships & Professional Credentials" strip** *(new)*
+- Text-based badge row: **Jobber Partner** · QuickBooks ProAdvisor · Microsoft Azure · Certified Management Accountant (CMA) Candidate
+- **This confirms the Jobber Partner mention is already live as plain text** — the visual badge graphic and referral link are still the pending items in the Roadmap section below
+
+**Closing CTA**
+- Heading: *"Enough about us. Let's talk about you."*
+- Button: **"Tell us your story"** → `/#contact` *(changed from "Get in Touch")*
+
+**CSS note:** The personal pull-quotes (Bible verse, Einstein quote) and the testimonial quotes on `work.html` both need italic/color treatment — this is likely what's being tackled in the current CSS pass. Also worth checking: the "Our Promise" heading on the homepage and the "Better Together" heading here both use multiple `<em>` tags in a single heading (two and two respectively) — confirm the existing `em` mauve-italic rule renders correctly with more than one accent per line, since earlier headings only ever used one `<em>` at a time.
 
 ---
 
 ## Roadmap / Next Steps
 
-Open items, roughly grouped. Nothing here has been built yet — these are tracked for planning purposes.
+Open items, roughly grouped.
+
+### Active — CSS Pass (in progress)
+Blake is currently working on styling for:
+- **Testimonial quotes on `work.html`** — new star-rating + client quote blocks on the UniFi VLAN Design and Tailscale case cards need italic/color treatment distinct from the Problem/Solution/Outcome body copy
+- **Personal pull-quotes on `about.html`** — Bible verse (Blake) and Einstein quote (Matt) closing each bio
+- **Multi-`<em>` headings** — confirm the mauve-italic `em` styling still renders correctly now that some headings (homepage "Our Promise," About page "Better Together") use two or three `<em>` accents in a single line instead of one
 
 ### Content
-- **Matt's case studies** — operations/financial performance engagements to be added to `work.html`. Placeholder card is live. Source material: Matt's Upwork profile history (manual copy required — Upwork blocks automated fetching).
-- **Matt's additional credentials** — Bachelor of Science in Business (Arizona State University) and CMA Candidate are live on `about.html`. Matt mentioned other credentials to add but hasn't specified them yet.
-- **Blue collar / SMB niche messaging** — currently only explicit in the About page philosophy section. Worth considering whether this positioning should surface more directly on the homepage or services page as the niche solidifies.
+- ~~Matt's case studies~~ ✅ **Done** — landed as two parallel Fractional CIO/COO case studies on `work.html`, split by discipline (Blake/CIO side, Matt/COO side)
+- ~~Matt's additional credentials~~ ✅ **Done** — QuickBooks ProAdvisor, Power BI, Tableau, and Python Data Analyst certifications all added to `about.html`, plus his ASU degree detail updated (Business Data Analytics, 4.0 Summa Cum Laude)
+- **`.mission-block` / `.mission-grid` CSS cleanup** — the homepage `#about` section has been rewritten twice (Mission/Vision cards → "Our Promise" text blocks). If the card-based CSS classes are no longer referenced in the HTML, they're dead code in `styles.css` — worth removing next cleanup pass
+- **Blue collar / SMB niche messaging** — still mostly implicit (Landscaping & Field Services tags on `work.html`, Jobber-heavy service copy) rather than stated outright anywhere. Worth a decision on whether it becomes an explicit positioning line somewhere prominent as the niche solidifies
 
 ### Jobber Partner Program
-Kalea was recently accepted as a Jobber Partner. Two components under discussion, neither built yet:
-- **Partner badge** — need to pull the actual badge asset and brand usage guidelines from the Jobber Partner dashboard (not accessible to Claude). Placement leaning toward moderate visibility — near the Jobber-related content on the Services page and/or footer — rather than homepage-prominent, to avoid the site reading as a Jobber reseller page rather than Kalea's own brand.
-- **Referral link** — a CTA for prospects who want to sign up for Jobber directly, likely placed near the Systems & Infrastructure service block. Link/tracking format TBD once pulled from the partner dashboard.
+Kalea was accepted as a Jobber Partner. Text mention is now live (see About page "Partnerships & Professional Credentials" strip). Two components still not built:
+- **Partner badge (graphic)** — need to pull the actual badge asset and brand usage guidelines from the Jobber Partner dashboard (not accessible to Claude). Leaning toward moderate visibility rather than homepage-prominent.
+- **Referral link** — a CTA for prospects who want to sign up for Jobber directly. Link/tracking format TBD once pulled from the partner dashboard.
 
 ### Payment Processing
-Still being scoped — two distinct possible directions, not yet decided:
+Still being scoped — not yet decided:
 1. **Kalea invoicing** — clients pay Kalea directly through the site (e.g., Stripe integration). Real financial infrastructure, more involved.
 2. **Jobber Payments promotion** — content-only addition describing Jobber Payments as part of the Jobber implementation service offering. Low lift.
 3. Possibly both, but worth deciding which problem is actually being solved before scoping either.
 
 ### Housekeeping
-- **`pricing.html` URL** — file is named `pricing.html` but labeled "How We Work" in nav and on page. Renaming would require a `_redirects` file for backwards compatibility. Low priority.
+- **`pricing.html` URL** — file is named `pricing.html` but labeled "How We Work" everywhere. Renaming would require a `_redirects` file for backwards compatibility. Low priority.
 - **Commit message discipline** — ongoing conversation with Matt about descriptive commit messages given Cloudflare Pages deploys directly on push with no staging step.
 
 ---
@@ -283,23 +341,31 @@ This section documents the writing style used across the site so future copy sta
 - **People, Operations, Systems** — this triad appears multiple times (homepage eyebrow, about heading, pricing footer). It's a deliberate pattern, not accidental repetition.
 
 ### What Changed From the Original Build
-The original copy (written by Claude) was slightly more formal and led with Kalea's process. Matt and Blake rewrote it to:
-- Lead more with client outcomes ("your business runs better") rather than Kalea's methods
-- Soften the "we own everything" tone to "we work with you"
-- Add the journey framework (Start Better / Run Better / Grow Better) which is more aspirational than the original model-card approach
-- Remove the specific $100/hr rate reference from the pricing page
-- Rename "Execution" to "Business Transformation" on the services page — signals bigger thinking
-- Add AI integration explicitly to the services list (Workflow Automation & AI Integration)
+Two rounds of edits so far. First round (services, pricing, initial about):
+- Led more with client outcomes ("your business runs better") rather than Kalea's methods
+- Softened the "we own everything" tone to "we work with you"
+- Added the journey framework (Start Better / Run Better / Grow Better)
+- Removed the specific $100/hr rate reference from the pricing page
+- Renamed "Execution" to "Business Transformation" on the services page
+- Added AI integration explicitly to the services list
+
+Second round (homepage, about, work — this session) pushed the voice further toward **personal and values-driven**, not just direct:
+- Homepage About section rewritten again from Mission/Vision cards to a more narrative "Our Promise" (Why we exist / Where we're going / How we help)
+- About page fully rebuilt around **people first, credentials second** — both team bios now include real personal detail (family, hobbies, pets) and a closing personal quote (scripture for Blake, Einstein for Matt). This is a deliberate shift: the site now leads with *who these people are* before *what they're certified in*.
+- Work page case studies now include **verbatim client testimonials with star ratings** — first time the site quotes someone other than Kalea. This is a trust-signal upgrade from pure narrative case studies.
+- The "people first" philosophy is now stated outright on the About page hero: *"Build, sustain, and grow the business around people first. When people thrive, businesses thrive."* This is a stronger, more explicit values statement than anything in round one.
 
 ### Blue Collar / SMB Niche
-An emerging positioning direction — not yet explicit on the site but present in the About page philosophy section being built. The pitch: *"owner-operated businesses where the people doing the work are exceptional at it, and need a partner to help the business keep up with them."* Trades, field services, home services (Jobber appears prominently in service listings). This should inform future case study copy and any homepage refresh.
+Still mostly *implicit* rather than stated outright — shows up as "Landscaping & Field Services" tags on the work.html case studies and heavy Jobber presence in service copy, but there's no single explicit sentence anywhere claiming this niche the way the earlier About-page draft did. Worth a decision on whether to make it explicit again as the niche solidifies, or whether letting the case studies speak for themselves is the intended approach now.
 
 ### CTAs
-- Primary CTA across all pages: **"Start a Conversation"** → `/#contact`
+- Primary CTA across most pages: **"Start a Conversation"** → `/#contact`
+- Homepage hero secondary CTA: **"Our Story"** → `/about.html` *(changed from "Meet the team")*
+- Homepage "Our Promise" section CTA: **"Our Philosophy"** → `/about.html#better-together`
 - Pricing page uses journey-specific CTAs: "Start Better" / "Run Better" / "Grow Better"
-- About page (in progress) uses: **"Get in Touch"**
-- Services page closes with: **"Start a Conversation"**
-- Keep CTA language consistent with page context — avoid generic "Learn More"
+- About page closing CTA: **"Tell us your story"** → `/#contact` *(changed from "Get in Touch")*
+- Work page closing CTA: **"Start a Conversation"** under heading *"Your business could be the next success story."*
+- Keep CTA language consistent with page context — avoid generic "Learn More". Note the trend: CTAs are getting more narrative/personal ("Tell us your story," "Our Story") rather than purely transactional — worth keeping new CTAs in that register
 
 ---
 
@@ -329,7 +395,7 @@ Dropdown options (current):
 - **`pricing.html` filename vs label:** File is named `pricing.html` but displayed as "How We Work" everywhere. The `<title>` now correctly reads "How We Work." The filename mismatch is intentional for now — renaming would need a `_redirects` entry
 - **Two brand palettes:** Warm navy/mauve/cream (this site) and cool teal (Word documents in `kalea_base.js`). Intentionally separate — do not mix
 - **Mobile nav:** Hamburger menu implemented in `main.js` and `styles.css` — was missing from the original single-file site
-- **Upwork blocks automated fetching** — profile content must be copied manually for case studies
+- **Two local machines:** Blake works from both a desktop (`C:\Users\blake\Dev\kalea-website`) and a laptop (`D:\CodeProjects\kalea_website`). `git status` only compares against the last local fetch — it won't tell you if the remote has moved unless you `git fetch origin` first. Run `git fetch` before trusting `git status` when switching machines, especially if Matt might have pushed in the meantime.
 
 ---
 
@@ -338,7 +404,7 @@ Dropdown options (current):
 - **Blake:** https://www.upwork.com/freelancers/~01bff2df6c91d4093b
 - **Matt:** https://www.upwork.com/freelancers/~01e8d5e5555738f465
 
-Matt's project history from Upwork is the primary source for future operations case studies on `work.html`.
+Both profiles are now linked directly from each team member's section on `about.html`. Matt's project history was the source for his two case studies now live on `work.html` (Fractional COO / Jobber + QuickBooks work). Note Upwork blocks automated fetching — any future case study content still needs to be copied manually.
 
 ---
 
