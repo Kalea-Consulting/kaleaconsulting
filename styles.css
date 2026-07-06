@@ -1055,6 +1055,31 @@ footer { background: var(--navy); padding: 2.5rem 5vw; }
   padding-top: 1rem;
   border-top: 1px solid rgba(42,61,83,0.08);
 }
+.case-review {
+  display: flex;
+  flex-direction: column;
+}
+
+.case-stars {
+  color: #D4A017;
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.case-rating {
+  color: var(--navy);
+  margin-left: 0.25rem;
+}
+
+.case-review-text {
+  font-size: 0.82rem;
+  line-height: 1.65;
+  color: #5a6272;
+  font-style: italic;
+  margin: 0;
+}
+
 .case-model {
   font-size: 0.74rem;
   font-weight: 500;
