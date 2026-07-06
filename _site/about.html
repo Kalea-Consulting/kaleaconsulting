@@ -1,9 +1,45 @@
----
-layout: default
-active: about
-title: About Us
-description: Meet the team behind Kalea Consulting — Blake Rice and Matt Schlagel, bringing together technology infrastructure and operational leadership to help businesses run better.
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Per-page title & description come from each page's front matter -->
+  <title>About Us | Kalea Consulting</title>
+  <meta name="description" content="Meet the team behind Kalea Consulting — Blake Rice and Matt Schlagel, bringing together technology infrastructure and operational leadership to help businesses run better." />
+
+  <!-- Open Graph / social preview -->
+  <meta property="og:title" content="About Us | Kalea Consulting" />
+  <meta property="og:description" content="Meet the team behind Kalea Consulting — Blake Rice and Matt Schlagel, bringing together technology infrastructure and operational leadership to help businesses run better." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="http://localhost:4000/about.html" />
+
+  <link rel="icon" href="/consulting-k.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+
+<nav id="navbar">
+  <a href="/" class="nav-logo">
+    <img src="/consulting-k.png" alt="Kalea K mark" />
+    <span class="nav-logo-text">Kalea Consulting</span>
+  </a>
+
+  <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+    <span></span><span></span><span></span>
+  </button>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="/">Home</a></li>
+    <li><a href="/services.html">Our Services</a></li>
+    <li><a href="/work.html">Our Work</a></li>
+    <li><a href="/pricing.html">How We Work</a></li>
+    <li><a href="/about.html" class="active">About</a></li>
+    <li><a href="/#contact" class="nav-cta">Get in Touch</a></li>
+  </ul>
+</nav>
+
 
 <!-- PAGE HERO -->
 <section class="page-hero">
@@ -237,3 +273,20 @@ description: Meet the team behind Kalea Consulting — Blake Rice and Matt Schla
     <a href="/#contact" class="btn-cream">Tell us your story</a>
   </div>
 </div>
+
+
+<!-- Shared footer. Edit once, applies everywhere. -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <img src="/consulting-k.png" alt="Kalea K" />
+      <span class="footer-logo-text">Kalea Consulting</span>
+    </div>
+    <p class="footer-copy">&copy; 2025 Kalea Consulting. Sarasota, FL.</p>
+  </div>
+</footer>
+
+
+<script src="/main.js"></script>
+</body>
+</html>

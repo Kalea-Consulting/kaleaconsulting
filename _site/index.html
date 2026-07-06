@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Per-page title & description come from each page's front matter -->
+  <title>Kalea Consulting</title>
+  <meta name="description" content="U.S.-based operations and technology firm helping businesses run better — operations, systems, and execution that hold up in the real world." />
+
+  <!-- Open Graph / social preview -->
+  <meta property="og:title" content="Kalea Consulting" />
+  <meta property="og:description" content="U.S.-based operations and technology firm helping businesses run better — operations, systems, and execution that hold up in the real world." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="http://localhost:4000/" />
+
+  <link rel="icon" href="/consulting-k.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+
+<nav id="navbar">
+  <a href="/" class="nav-logo">
+    <img src="/consulting-k.png" alt="Kalea K mark" />
+    <span class="nav-logo-text">Kalea Consulting</span>
+  </a>
+
+  <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+    <span></span><span></span><span></span>
+  </button>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="/" class="active">Home</a></li>
+    <li><a href="/services.html">Our Services</a></li>
+    <li><a href="/work.html">Our Work</a></li>
+    <li><a href="/pricing.html">How We Work</a></li>
+    <li><a href="/about.html">About</a></li>
+    <li><a href="/#contact" class="nav-cta">Get in Touch</a></li>
+  </ul>
+</nav>
+
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div class="hero-text fade-up">
+      <span class="hero-eyebrow">Operations &middot; Systems &middot; Execution</span>
+      <h1 class="hero-heading">
+        Helping businesses <em>run better.</em>
+      </h1>
+      <p class="hero-subtext">
+        We align people, operations, and technology to build stronger businesses through practical execution and long-term thinking.
+      </p>
+      <div class="hero-actions">
+        <a href="/#contact" class="btn-primary">Start a Conversation</a>
+        <a href="/about.html" class="btn-secondary">
+          Our Story
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-number">Operations</div>
+          <div class="stat-label">People | Process | Performance</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">Systems</div>
+          <div class="stat-label">Infrastructure | Cloud | Security</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">Execution</div>
+          <div class="stat-label">Implementation | Integration | Automation</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual fade-up" style="transition-delay:0.15s">
+      <div class="hero-banner-wrap">
+        <img src="/consulting-banner.png" alt="Kalea Consulting team" />
+      </div>
+      <div class="hero-accent-line"></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES STRIP -->
+<div class="services-strip">
+  <div class="services-strip-inner">
+
+    <!-- Operations -->
+    <div class="service-pill fade-up">
+      <svg class="service-icon" viewBox="0 0 36 36" fill="none">
+        <circle cx="18" cy="18" r="6" stroke="currentColor" stroke-width="1.8"/>
+        <path d="M18 4v4M18 28v4M4 18h4M28 18h4M7.8 7.8l2.8 2.8M25.4 25.4l2.8 2.8M7.8 28.2l2.8-2.8M25.4 10.6l2.8-2.8"
+          stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      <div>
+        <div class="service-pill-title">Operations &amp; Decision Support</div>
+        <div class="service-pill-desc">
+          We create structure, accountability, and visibility so your team 
+          can operate consistently and you can make better business decisions.
+        </div>
+      </div>
+    </div>
+
+    <!-- Systems -->
+    <div class="service-pill fade-up" style="transition-delay:0.1s">
+      <svg class="service-icon" viewBox="0 0 36 36" fill="none">
+        <rect x="6" y="8" width="24" height="16" rx="2" stroke="currentColor" stroke-width="1.8"/>
+        <path d="M12 28h12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+      <div>
+        <div class="service-pill-title">Systems &amp; Infrastructure</div>
+        <div class="service-pill-desc">
+          We build and strengthen the systems behind your business so your operations run 
+          reliably today and scale with confidence tomorrow.
+        </div>
+      </div>
+    </div>
+
+    <!-- Execution -->
+    <div class="service-pill fade-up" style="transition-delay:0.2s">
+      <svg class="service-icon" viewBox="0 0 36 36" fill="none">
+        <circle cx="18" cy="18" r="14" stroke="currentColor" stroke-width="1.8"/>
+        <path d="M10 18l5 5 11-11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div>
+        <div class="service-pill-title">Execution</div>
+        <div class="service-pill-desc">
+          We turn strategy into action by implementing practical solutions that 
+          improve the way your business operates and create lasting value.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+   <div class="services-strip-more">
+      <a href="/pricing.html">
+      Start Your Journey
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+      <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
+</div>
+
+  </div> <!-- END services-strip -->
+
+<!-- ============================================================
+     HOMEPAGE — #about SECTION REPLACEMENT
+     Replace the entire existing <section id="about">...</section>
+     block in index.html with this.
+     ============================================================ -->
+
+<section id="about">
+  <div class="section-inner">
+    <p class="section-label fade-up">Our Promise</p>
+    <h2 class="section-heading fade-up">
+    Built on <em>integrity</em>.
+    Guided by <em>practical leadership</em>.
+    Driven by <em>execution</em>.
+    </h2>
+
+    <div class="mission-grid">
+
+      <div class="mission-block fade-up">
+        <span class="mission-kicker">Why we exist</span>
+        <p class="mission-text">
+          We help businesses run better by aligning people, operations, and technology through practical execution.
+        </p>
+      </div>
+
+      <div class="mission-block fade-up" style="transition-delay:0.1s">
+        <span class="mission-kicker">Where we’re going</span>
+        <p class="mission-text">
+          A future where every growing business has access to practical leadership, modern technology, and 
+          the operational support needed to grow with confidence.
+        </p>
+      </div>
+
+      <div class="mission-block fade-up" style="transition-delay:0.2s">
+        <span class="mission-kicker">How we help</span>
+        <p class="mission-text">
+          Every recommendation we make considers the people doing the work, the operations that drive the business, 
+          and the systems that support them. We believe the best results come when all three work together, making 
+          businesses easier to run, easier to grow, and better prepared for what's next.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="mission-cta fade-up">
+      <a href="/about.html#better-together" class="btn-primary">Our Philosophy</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <p class="section-label fade-up">Get in Touch</p>
+    <h2 class="section-heading fade-up">Let's talk about your business.</h2>
+
+    <div class="contact-grid">
+      <div class="fade-up">
+        <p class="contact-intro">
+          Tell us what you're working on, where you're running into challenges, or where you want to take your business 
+          next. We'll help you determine the best path forward.
+        </p>
+
+        <div class="contact-detail">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <path d="M9 1C6.24 1 4 3.24 4 6c0 4 5 11 5 11s5-7 5-11c0-2.76-2.24-5-5-5z" stroke="currentColor" stroke-width="1.5"/>
+            <circle cx="9" cy="6" r="1.5" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+          <span>Sarasota, FL</span>
+        </div>
+        <div class="contact-detail">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <path d="M2 4h14a1 1 0 011 1v8a1 1 0 01-1 1H2a1 1 0 01-1-1V5a1 1 0 011-1z" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M1 5l8 6 8-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <a href="mailto:hello@kaleafirm.com">hello@kaleafirm.com</a>
+        </div>
+        <div class="contact-detail">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <path d="M17 12.92v2.5a1.67 1.67 0 01-1.82 1.67A16.52 16.52 0 011.83 3.82 1.67 1.67 0 013.5 2h2.5a1.67 1.67 0 011.67 1.43c.1.76.3 1.5.57 2.22a1.67 1.67 0 01-.37 1.76l-1.06 1.06a13.33 13.33 0 005.68 5.68l1.06-1.06a1.67 1.67 0 011.76-.37c.72.27 1.46.47 2.22.57A1.67 1.67 0 0117 12.92z" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+          <span>USA <a href="tel:+16237385101">(623) 738-5101</a></span>
+        </div>
+
+        <div class="contact-detail">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <path d="M17 12.92v2.5a1.67 1.67 0 01-1.82 1.67A16.52 16.52 0 011.83 3.82 1.67 1.67 0 013.5 2h2.5a1.67 1.67 0 011.67 1.43c.1.76.3 1.5.57 2.22a1.67 1.67 0 01-.37 1.76l-1.06 1.06a13.33 13.33 0 005.68 5.68l1.06-1.06a1.67 1.67 0 011.76-.37c.72.27 1.46.47 2.22.57A1.67 1.67 0 0117 12.92z" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+          <span>CAN <a href="tel:+16043320157">(604) 332-0157</a></span>
+        </div>
+      </div>
+
+      <form class="contact-form fade-up" style="transition-delay:0.15s" action="https://formspree.io/f/mykogdvw" method="POST">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" />
+          </div>
+          <div class="form-group">
+            <label for="company">Company</label>
+            <input type="text" id="company" name="company" placeholder="Your company" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@company.com" />
+        </div>
+        <div class="form-group">
+          <label for="interest">I'm interested in</label>
+          <select id="interest" name="interest">
+            <option value="">How can we help?</option>
+            <option>Build the Foundation (Start Better)</option>
+            <option>Optimize the Business (Run Better)</option>
+            <option>Lead with Confidence (Grow Better)</option>
+            <option>I'm not sure</option>
+            <option>Existing Client</option>
+            <option>General Question</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Tell us a bit about what you're working on..."></textarea>
+        </div>
+        <button type="submit" class="form-submit">Send Message &rarr;</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+<!-- Shared footer. Edit once, applies everywhere. -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <img src="/consulting-k.png" alt="Kalea K" />
+      <span class="footer-logo-text">Kalea Consulting</span>
+    </div>
+    <p class="footer-copy">&copy; 2025 Kalea Consulting. Sarasota, FL.</p>
+  </div>
+</footer>
+
+
+<script src="/main.js"></script>
+</body>
+</html>
