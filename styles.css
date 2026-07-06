@@ -1006,6 +1006,23 @@ footer { background: var(--navy); padding: 2.5rem 5vw; }
   border-radius: 2px;
   padding: 0.25rem 0.6rem;
 }
+
+/* Centered badge for ongoing projects */
+.case-ongoing-badge-centered {
+  display: block;
+  width: fit-content;
+  margin: 0 auto 1rem;
+
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--white);
+  background: var(--navy);
+  border-radius: 2px;
+  padding: 0.25rem 0.6rem;
+}
+
 .case-title {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.35rem;
