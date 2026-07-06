@@ -1353,6 +1353,14 @@ footer { background: var(--navy); padding: 2.5rem 5vw; }
   color: rgba(255,255,255,0.7);
   text-align: center;
 }
+a.partner-badge {
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.2s ease;
+}
+a.partner-badge:hover {
+  opacity: 0.8;
+}
 
 /* Philosophy section */
 .philosophy-section { background: var(--cream-light); padding: 5rem 5vw; }
