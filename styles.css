@@ -1107,6 +1107,20 @@ footer { background: var(--navy); padding: 2.5rem 5vw; }
 /* ── ABOUT PAGE ───────────────────────────────────────── */
 .about-detail { background: var(--white); padding: 5rem 5vw; }
 
+.section-divider {
+  max-width: 75%;
+  width: 75%;
+  margin: 0 auto;
+  border-top: 2px solid rgba(255,255,255,0.15);
+}
+
+.pricing-intro-band {
+  margin-bottom: -1px;
+}
+.cta-band {
+  margin-top: -1px;
+}
+
 .team-detail-block {
   display: grid;
   grid-template-columns: 280px 1fr;
@@ -1262,6 +1276,33 @@ footer { background: var(--navy); padding: 2.5rem 5vw; }
 }
 .pricing-intro-band .skill-tags {
   justify-content: center;
+}
+.partner-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  align-items: center;
+  justify-content: center;
+  margin: 1.2rem 0 1.5rem;
+}
+.partner-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+.partner-badge img {
+  width: 108px;
+  height: 108px;
+  object-fit: contain;
+}
+.partner-badge-label {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  text-align: center;
 }
 
 /* Philosophy section */
