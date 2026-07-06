@@ -1291,6 +1291,55 @@ footer { background: var(--navy); padding: 2.5rem 5vw; }
   align-items: center;
   gap: 0.5rem;
 }
+.partner-tooltip-wrap {
+  position: relative;
+  display: inline-block;
+  cursor: default;
+  border-bottom: 1px dotted rgba(254,235,199,0.45);
+}
+.partner-tooltip {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--cream);
+  border-radius: 3px;
+  padding: 0.5rem 0.9rem;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+  z-index: 10;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+}
+.partner-tooltip::after {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-bottom-color: var(--cream);
+}
+.partner-tooltip-wrap:hover .partner-tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+.partner-badge-link {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--navy);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(42,61,83,0.3);
+  transition: color 0.2s, border-color 0.2s;
+}
+.partner-badge-link:hover {
+  color: var(--mauve);
+  border-color: var(--mauve);
+}
 .partner-badge img {
   width: 108px;
   height: 108px;
