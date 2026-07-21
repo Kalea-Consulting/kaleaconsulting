@@ -1230,6 +1230,20 @@ footer { background: var(--navy); padding: 2.5rem 5vw; }
 }
 .profile-link:hover { color: var(--mauve); border-color: var(--mauve); }
 
+.top-rated-line {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 0.75rem;
+  font-size: 0.82rem;
+  color: var(--navy);
+}
+
+.partner-badge {
+  height: 1.1rem;
+  width: auto;
+}
+
 .team-detail-bio {
   font-size: 0.98rem;
   font-weight: 300;
